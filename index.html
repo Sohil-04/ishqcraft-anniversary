@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Little Surprise · ISHQCRAFT</title>
+<meta name="theme-color" content="#5a0f24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<!-- Circular reveal layer (sits under the curtains, expands from the centre) -->
+<div id="reveal" aria-hidden="true"></div>
+<div id="revealRing" aria-hidden="true"></div>
+
+<!-- Curtains -->
+<div id="curtains">
+  <div class="curtain left"><span class="tassel"></span></div>
+  <div class="curtain right"><span class="tassel"></span></div>
+  <div class="curtain-center">
+    <p class="brand">ISHQCRAFT</p>
+    <h1>Someone has prepared a little surprise for you…</h1>
+    <p class="ready">Are you ready, <span data-cfg="recipientName"></span>? ❤️</p>
+    <button id="openBtn" class="btn" type="button">OPEN YOUR SURPRISE</button>
+  </div>
+</div>
+
+<button id="musicBtn" class="music" type="button" aria-label="Toggle music" hidden>♪</button>
+<div id="fx" aria-hidden="true"></div>
+
+<main id="stage">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"><img id="heroImg" alt="Our engagement rings with roses and pearls"></div>
+    <div class="hero-overlay"></div>
+    <div class="frame"></div>
+    <div class="hero-content">
+      <p class="script">Made with love, especially for you, <span data-cfg="recipientName"></span>.</p>
+      <h2>A Little Surprise,<br>Just for You…</h2>
+      <p class="lead">Every love story has a beautiful moment worth celebrating.</p>
+      <p class="names"><span data-cfg="senderName"></span> ❤️ <span data-cfg="recipientName"></span></p>
+      <a href="#story" class="btn" data-scroll>CONTINUE OUR LOVE STORY</a>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="sec" id="story">
+    <h2 class="title reveal">Our Beautiful Story</h2>
+    <p class="sub reveal">Every moment with you becomes a memory worth keeping.</p>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="sec alt" id="gallery">
+    <h2 class="title reveal">Little Moments, Forever Memories</h2>
+    <div class="scrap reveal" id="scrap">
+      <p class="s-date" id="scrapDate"></p>
+      <i class="pearl" style="top:17%"></i><i class="pearl" style="top:20.5%"></i><i class="pearl" style="top:24%"></i>
+      <!-- 📸 PHOTOS: the 3 film-strip photos are filled automatically from the first 3 items of "gallery" in js/script.js -->
+      <div class="strip" id="strip"></div>
+      <svg class="clip" viewBox="0 0 60 80" aria-hidden="true"><path d="M12 38V14a18 18 0 0 1 36 0v24" fill="none" stroke="#8a8a90" stroke-width="3.5"/><rect x="4" y="34" width="52" height="30" rx="4" fill="#b9bac0" stroke="#7d7e85" stroke-width="2"/><path d="M12 38v18M48 38v18" stroke="#8a8a90" stroke-width="3"/></svg>
+      <p class="s-text" id="scrapText"></p>
+      <svg class="lily" viewBox="0 0 200 330" aria-hidden="true">
+        <path d="M110 320C118 250 112 190 104 130" fill="none" stroke="#5f8f3a" stroke-width="5"/>
+        <path d="M112 280C150 230 190 235 205 205C170 225 130 235 112 280Z" fill="#6aa043"/>
+        <g transform="translate(104 120)">
+          <g fill="#f06fa6" stroke="#d94a86" stroke-width="1.5">
+            <ellipse rx="16" ry="52" transform="rotate(-65) translate(0 -42)"/>
+            <ellipse rx="16" ry="52" transform="rotate(-25) translate(0 -42)"/>
+            <ellipse rx="16" ry="52" transform="rotate(20) translate(0 -42)"/>
+            <ellipse rx="16" ry="52" transform="rotate(65) translate(0 -42)"/>
+            <ellipse rx="15" ry="48" transform="rotate(-110) translate(0 -40)"/>
+          </g>
+          <g stroke="#e8b44b" stroke-width="3" stroke-linecap="round"><path d="M0 0L-26-48M0 0L-6-58M0 0L16-54"/></g>
+          <g fill="#b3541f"><circle cx="-26" cy="-48" r="4"/><circle cx="-6" cy="-58" r="4"/><circle cx="16" cy="-54" r="4"/></g>
+        </g>
+      </svg>
+      <div class="env">
+        <svg viewBox="0 0 260 190" aria-hidden="true"><path d="M8 40L130 12L252 40V182H8Z" fill="#f2a6c1"/><path d="M8 40L130 120L252 40" fill="#f7bfd3" stroke="#e58aab" stroke-width="2"/><path d="M8 182L110 100M252 182L150 100" stroke="#e58aab" stroke-width="2"/></svg>
+        <div class="note"><span>Happy Anniversary</span><small id="noteNames"></small></div>
+        <i class="seal"></i>
+      </div>
+      <svg class="rings" viewBox="0 0 120 80" aria-hidden="true"><circle cx="42" cy="44" r="28" fill="none" stroke="#d4a335" stroke-width="9"/><circle cx="42" cy="44" r="28" fill="none" stroke="#f6d776" stroke-width="3" stroke-dasharray="40 140"/><circle cx="78" cy="36" r="28" fill="none" stroke="#d4a335" stroke-width="9"/><circle cx="78" cy="36" r="28" fill="none" stroke="#f6d776" stroke-width="3" stroke-dasharray="40 140"/></svg>
+      <p class="s-tag">@ishqcraft</p>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <!-- SCRATCH CARD -->
+  <section class="sec" id="scratch">
+    <p class="script reveal">Something Special Is Waiting For You…</p>
+    <h2 class="title reveal">Scratch Here, My Love ❤️</h2>
+    <!-- Heart-shaped scratch card: the clipPath below gives the card (and the golden foil) its heart outline -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="heartClip" clipPathUnits="objectBoundingBox"><path d="M0.5 0.95C0.5 0.95 0.02 0.62 0.02 0.3C0.02 0.12 0.16 0.03 0.3 0.03C0.41 0.03 0.5 0.1 0.5 0.2C0.5 0.1 0.59 0.03 0.7 0.03C0.84 0.03 0.98 0.12 0.98 0.3C0.98 0.62 0.5 0.95 0.5 0.95Z"/></clipPath></defs></svg>
+    <div class="heart-wrap reveal">
+      <div class="card" id="card">
+        <div class="card-msg" id="cardMsg"></div>
+        <canvas id="scratchCanvas"></canvas>
+      </div>
+      <svg class="heart-border" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M50 95C50 95 2 62 2 30C2 12 16 3 30 3C41 3 50 10 50 20C50 10 59 3 70 3C84 3 98 12 98 30C98 62 50 95 50 95Z"/></svg>
+    </div>
+    <p class="hint" id="hint">Use your finger to scratch the golden surface</p>
+    <div class="letter" id="scratchLetter" hidden></div>
+    <button id="replayBtn" class="btn ghost" type="button" hidden>SCRATCH AGAIN</button>
+  </section>
+
+  <!-- ANNIVERSARY -->
+  <section class="sec anniv" id="anniversary">
+    <div class="glow-orb"></div>
+    <img class="roses-img" src="assets/images/roses.png" alt="" onerror="this.remove()">
+    <h2 class="title glow reveal">Happy Engagement Anniversary ❤️</h2>
+    <p class="date reveal" id="annivDate"></p>
+    <div class="gold-line"></div>
+    <p class="big reveal">A beautiful promise, a special bond, and a love story that keeps growing.</p>
+    <p class="script reveal">Happy Engagement Anniversary, <span data-cfg="recipientName"></span>.</p>
+    <p class="script reveal">With all my love,<br><span data-cfg="senderName"></span> ❤️</p>
+  </section>
+
+  <!-- FINAL -->
+  <section class="sec final" id="final">
+    <h2 class="title reveal">One Last Little Surprise…</h2>
+    <img class="roses-img small" src="assets/images/pink-rose.png" alt="" onerror="this.remove()">
+    <div class="beat">❤</div>
+    <div class="letter reveal" id="finalLetter"></div>
+    <button id="foreverBtn" class="btn" type="button">OUR FOREVER BEGINS HERE ❤️</button>
+    <p class="credit">Created with love by ISHQCRAFT</p>
+  </section>
+</main>
+
+<!-- ENDING SCREEN -->
+<div id="ending" hidden>
+  <div class="ending-box">
+    <div class="beat big">❤</div>
+    <h2 id="endTitle"></h2>
+    <p class="script" id="endText"></p>
+    <button id="closeEnd" class="btn ghost" type="button">BACK TO THE SURPRISE</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
